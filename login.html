@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ffd6e8, #ffeaf4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 30px rgba(255, 182, 193, 0.35);
+            width: 320px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff4f87;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ffd1e3;
+            border-radius: 12px;
+            outline: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #ff6fa5;
+            box-shadow: 0 0 8px rgba(255, 111, 165, 0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff6fa5;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff4f87;
+            transform: scale(1.03);
+        }
+
+        .error {
+            color: #ff2e74;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+
+    <h2>Resume Analyzer Login</h2>
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="footer">
+    </div>
+
+</div>
+
+</body>
+</html>
